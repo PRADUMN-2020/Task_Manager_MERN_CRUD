@@ -2,12 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config({ path: "./config.env" });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const DB = process.env.DATABASE;
+
 // Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/task_manager");
+mongoose.connect(DB);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection error:"));
