@@ -20,7 +20,7 @@ function App() {
       console.log("hey dude", response.data);
     };
     fetchTasks();
-  }, []);
+  }, [notes]);
 
   async function addNote(noteText) {
     console.log(noteText);
