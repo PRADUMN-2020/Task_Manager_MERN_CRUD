@@ -31,7 +31,7 @@ const Task = mongoose.model("Task", taskSchema);
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your client's URL
+    origin: "https://taskkeeper.vercel.app/", // Replace with your client's URL
     optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
   })
 );
