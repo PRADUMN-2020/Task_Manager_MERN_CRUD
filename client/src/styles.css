@@ -1,8 +1,3 @@
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-} */
 html {
   font-family: "Montserrat", sans-serif;
 }
@@ -44,14 +39,8 @@ header h1 {
   color: #ccc;
 }
 .note {
-  /* background: #f7c6eb; */
-
   padding: 2%;
-  /* margin: 4% auto; */
-  /* margin: auto; */
-  /* margin: 2%; */
-  /* float: left; */
-  /* width: 20%; */
+
   text-align: left;
 }
 .note div {
@@ -72,33 +61,25 @@ header h1 {
 }
 
 .note button {
-  /* border: 2px solid black; */
-  /* position: relative;
-  right: 0px; */
   text-align: right;
-  /* float: right; */
+
   padding: 10px;
   margin-right: 10px;
-  /* color: black; */
+
   border: none;
   font-size: 1rem;
   padding: 4%;
-  /* width: 40px; */
-  /* height: 36px; */
+
   cursor: pointer;
   outline: none;
-  /* background: #e5beec; */
 }
 
 form {
-  /* background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png"); */
-  /* background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
-
   position: relative;
   width: 40%;
   height: 60%;
   margin: 30px auto 20px auto;
-  /* background-color: #f4fc83; */
+
   background-color: #f291da;
   padding: 15px;
   border-radius: 7px;
