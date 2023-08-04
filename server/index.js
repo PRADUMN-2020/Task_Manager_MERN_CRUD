@@ -53,8 +53,9 @@ app.post("/api/tasks", async (req, res) => {
 app.get("/api/tasks", async (req, res) => {
   try {
     const tasks = await Task.find();
+    console.log(tasks);
     res.send(tasks);
-  } catch (error) {   
+  } catch (error) {
     res.status(500).send(error);
   }
 });

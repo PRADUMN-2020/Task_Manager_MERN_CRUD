@@ -13,9 +13,11 @@ function App() {
   // let [gotData, setGotData] = useState(false);
   useEffect(() => {
     const fetchTasks = async () => {
-      const response = await axios.get("/api/tasks");
+      const response = await axios.get(
+        "https://taskmanagerrestapi.onrender.com/api/tasks"
+      );
       setNotes(response.data);
-      console.log(response.data);
+      console.log("hey dude", response.data);
     };
     fetchTasks();
   }, []);
@@ -23,7 +25,10 @@ function App() {
   async function addNote(noteText) {
     console.log(noteText);
     try {
-      const response = await axios.post("/api/tasks", { noteText });
+      const response = await axios.post(
+        "https://taskmanagerrestapi.onrender.com/api/tasks",
+        { noteText }
+      );
       console.log("Task created:", response.data);
       setNotes((prevNotes) => {
         return [...prevNotes, noteText];
@@ -37,7 +42,9 @@ function App() {
   async function deleteNote(id) {
     console.log(id);
     try {
-      const response = await axios.delete(`/api/tasks/${id}`);
+      const response = await axios.delete(
+        `https://taskmanagerrestapi.onrender.com/api/tasks/${id}`
+      );
       console.log("Task deleted:", response.data);
 
       // Update state to remove the deleted task from the notes
@@ -59,7 +66,10 @@ function App() {
     setEditNote(false);
 
     try {
-      const response = await axios.patch(`/api/tasks/${id}`, editText);
+      const response = await axios.patch(
+        `https://taskmanagerrestapi.onrender.com/api/tasks/${id}`,
+        editText
+      );
       console.log("Task Updated:", response.data);
 
       setEditNote(false);
