@@ -110,7 +110,7 @@ function App() {
           <CreateArea onAdd={addNote} checkTitle={checkTitle} />
           <div class="container text-center">
             <div class="row">
-              {notes &&
+              {/* {notes &&
                 notes.map((currNote, index) => {
                   return (
                     <Note
@@ -124,7 +124,7 @@ function App() {
                       checkTitle={checkTitle}
                     />
                   );
-                })}
+                })} */}
             </div>
           </div>
         </div>
