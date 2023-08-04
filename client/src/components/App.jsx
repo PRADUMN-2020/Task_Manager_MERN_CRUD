@@ -110,20 +110,21 @@ function App() {
           <CreateArea onAdd={addNote} checkTitle={checkTitle} />
           <div class="container text-center">
             <div class="row">
-              {notes.map((currNote, index) => {
-                return (
-                  <Note
-                    key={currNote._id}
-                    title={currNote.title}
-                    content={currNote.content}
-                    status={currNote.status}
-                    _id={currNote._id}
-                    onDelete={deleteNote}
-                    onEdit={editFun}
-                    checkTitle={checkTitle}
-                  />
-                );
-              })}
+              {notes &&
+                notes.map((currNote, index) => {
+                  return (
+                    <Note
+                      key={currNote._id}
+                      title={currNote.title}
+                      content={currNote.content}
+                      status={currNote.status}
+                      _id={currNote._id}
+                      onDelete={deleteNote}
+                      onEdit={editFun}
+                      checkTitle={checkTitle}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
