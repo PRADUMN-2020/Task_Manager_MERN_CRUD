@@ -7,12 +7,12 @@ import CreateArea from "./CreatArea";
 import Edit from "./Edit";
 
 function App() {
-  const [notes, setNotes] = useState([{}]);
+  const [notes, setNotes] = useState([]);
   const [editNote, setEditNote] = useState(false);
   const [editText, setEditText] = useState({});
   useEffect(() => {
     fetchTasks();
-  }, [notes]);
+  }, []);
 
   const fetchTasks = async () => {
     const response = await axios.get("/api/tasks");
