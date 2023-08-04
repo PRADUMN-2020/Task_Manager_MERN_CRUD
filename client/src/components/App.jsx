@@ -11,13 +11,12 @@ function App() {
   const [editNote, setEditNote] = useState(false);
   const [editText, setEditText] = useState({});
   useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await axios.get("/api/tasks");
+      setNotes(response.data);
+    };
     fetchTasks();
-  }, []);
-
-  const fetchTasks = async () => {
-    const response = await axios.get("/api/tasks");
-    setNotes(response.data);
-  };
+  }, [notes]);
 
   async function addNote(noteText) {
     console.log(noteText);
@@ -110,21 +109,20 @@ function App() {
           <CreateArea onAdd={addNote} checkTitle={checkTitle} />
           <div class="container text-center">
             <div class="row">
-              {notes &&
-                notes.map((currNote, index) => {
-                  return (
-                    <Note
-                      key={currNote._id}
-                      title={currNote.title}
-                      content={currNote.content}
-                      status={currNote.status}
-                      _id={currNote._id}
-                      onDelete={deleteNote}
-                      onEdit={editFun}
-                      checkTitle={checkTitle}
-                    />
-                  );
-                })}
+              {notes.map((currNote, index) => {
+                return (
+                  <Note
+                    key={currNote._id}
+                    title={currNote.title}
+                    content={currNote.content}
+                    status={currNote.status}
+                    _id={currNote._id}
+                    onDelete={deleteNote}
+                    onEdit={editFun}
+                    checkTitle={checkTitle}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
